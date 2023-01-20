@@ -78,6 +78,8 @@ GET /listings     Get all asset available for purchase.
 
 ```
 
+Data Table can be found at Models folder with @Entity annotation. 
+
 
 File Structure 
 ```
