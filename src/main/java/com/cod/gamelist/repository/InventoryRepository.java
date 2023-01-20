@@ -6,7 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -22,8 +21,8 @@ public interface InventoryRepository extends JpaRepository<Inventory, String> {
     Inventory save(Inventory inventory);
 
     /*
-    * Cannot update a single unit of inventory while being processed or read.
-    * */
+     * Cannot update a single unit of inventory while being processed or read.
+     * */
     @Lock(LockModeType.PESSIMISTIC_READ)
     Optional<Inventory> findById(String id);
 

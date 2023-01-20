@@ -1,6 +1,5 @@
 package com.cod.gamelist.repository;
 
-import com.cod.gamelist.model.Inventory;
 import com.cod.gamelist.model.Wallet;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;

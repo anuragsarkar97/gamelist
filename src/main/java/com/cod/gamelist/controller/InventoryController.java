@@ -1,9 +1,7 @@
 package com.cod.gamelist.controller;
 
-import com.cod.gamelist.exception.SQLException;
 import com.cod.gamelist.model.Inventory;
 import com.cod.gamelist.model.ResponseModel;
-import com.cod.gamelist.model.User;
 import com.cod.gamelist.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

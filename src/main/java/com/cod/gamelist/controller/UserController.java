@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 /*
  * Basic CRUD model for User
  * no authentication/authorization present in this scope
- * GET-PUT-PATCH-DELETE
+ * PUT-DELETE
  * */
 @RestController
 @RequestMapping

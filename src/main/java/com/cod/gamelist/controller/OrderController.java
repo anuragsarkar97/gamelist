@@ -1,6 +1,6 @@
 package com.cod.gamelist.controller;
 
-import com.cod.gamelist.model.Inventory;
+
 import com.cod.gamelist.model.Order;
 import com.cod.gamelist.model.PurchaseRequest;
 import com.cod.gamelist.model.ResponseModel;
@@ -23,7 +23,7 @@ public class OrderController {
         try {
             Order order = orderService.createOrder(purchaseRequest.getUserId(), purchaseRequest.getInventoryId());
             if (order == null) {
-                return ResponseEntity.ok().body(ResponseModel.builder().exception("Balance is low or error in inventory data").build());
+                return ResponseEntity.ok().body(ResponseModel.builder().exception("Balance is low or error in inventory unavailable").build());
             }
             return ResponseEntity.ok().body(ResponseModel.builder().data(order).build());
         } catch (Exception e) {

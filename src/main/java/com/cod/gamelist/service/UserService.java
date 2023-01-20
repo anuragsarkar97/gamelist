@@ -16,9 +16,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private WalletService walletService;
-
-    @Autowired
     private UserRepository userRepository;
 
     @Autowired
