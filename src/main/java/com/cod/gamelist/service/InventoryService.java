@@ -19,7 +19,7 @@ public class InventoryService {
     public List<Inventory> fetchInventory(Integer limit, Integer page) throws SQLException {
         try {
             Page<Inventory> inventoryResult = inventoryRepository
-                    .findAllByQuantityGreaterThan(0, PageRequest.of(page, limit));
+                    .findAllByStatusNot("SOLD", PageRequest.of(page, limit));
             return inventoryResult.stream().toList();
         } catch (Exception e) {
             throw new SQLException(e);

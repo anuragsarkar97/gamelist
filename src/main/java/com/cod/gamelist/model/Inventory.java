@@ -17,7 +17,7 @@ public class Inventory {
     private String id;
     private String name;
     private Float price;
-    private Long quantity;
+    private String status;
     private String type;
     private String externalId;
 

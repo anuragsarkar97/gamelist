@@ -33,7 +33,8 @@ public class DataLoader {
         try {
             log.info("Starting Data loader process");
             List<SupakiResult> responseObjects = exchangeAsList("https://supaki.free.beeceptor.com/items",
-                    new ParameterizedTypeReference<>() {});
+                    new ParameterizedTypeReference<>() {
+                    });
             responseObjects.forEach(System.out::println);
             responseObjects.forEach(result -> {
                 List<Inventory> presentInventory = inventoryRepository.findByExternalIdAndType(result.getId(), "SUPAKI-EXTERNAL");
@@ -42,7 +43,7 @@ public class DataLoader {
                             result.getId(),
                             result.getName(),
                             result.getPrice().floatValue(),
-                            100L,
+                            "SALE",
                             "SUPAKI-EXTERNAL",
                             result.getId()
                     );
