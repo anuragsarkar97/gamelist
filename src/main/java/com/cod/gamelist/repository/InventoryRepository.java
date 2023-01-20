@@ -17,11 +17,17 @@ public interface InventoryRepository extends JpaRepository<Inventory, String> {
 
     Page<Inventory> findAllByStatusNot(String status, PageRequest pageRequest);
 
+    /*
+    * pessimistic write locks are slow
+    * might as well go ahead with redis locks ?
+    * or optimistic locking given scenario of conflict is low.
+    * */
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     Inventory save(Inventory inventory);
 
     /*
      * Cannot update a single unit of inventory while being processed or read.
+     * might have edge cases of hot inventory reads
      * */
     @Lock(LockModeType.PESSIMISTIC_READ)
     Optional<Inventory> findById(String id);

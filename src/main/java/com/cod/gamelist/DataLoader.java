@@ -28,6 +28,10 @@ public class DataLoader {
         return restTemplate.exchange(uri, HttpMethod.GET, null, responseType).getBody();
     }
 
+    /*
+    * Starts everytime the server starts but only upsert.
+    * could be faster with batching
+    * */
     @PostConstruct
     public void init() {
         try {

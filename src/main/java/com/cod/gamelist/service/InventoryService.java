@@ -16,6 +16,9 @@ public class InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
+    /*
+    * Fetch all inventory which is not sold yet ( this can be a soft check - currently enforced )
+    * */
     public List<Inventory> fetchInventory(Integer limit, Integer page) throws SQLException {
         try {
             Page<Inventory> inventoryResult = inventoryRepository

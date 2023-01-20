@@ -36,6 +36,11 @@ public class OrderService {
     @Autowired
     private UserRepository userRepository;
 
+    /*
+    * Creates a new order and updates the wallet and the inventory
+    * currently this service has access to all the databases
+    * ideal case services should interact instead of direct repositories access (some DAO)
+    * */
     @Transactional
     public Order createOrder(String userId, String inventoryId) throws SQLException {
         try {
