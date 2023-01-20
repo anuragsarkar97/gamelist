@@ -1,12 +1,8 @@
 FROM openjdk:17-jdk-slim-buster
-WORKDIR /app
 
-COPY app/build/lib/* build/lib/
-
-COPY app/build/libs/app.jar build/
+COPY build/libs .
 
 EXPOSE 8080
 EXPOSE 5000
 
-WORKDIR /app/build
-ENTRYPOINT java -jar app.jar
+CMD ["java", "-jar", "gamelist-0.0.1-SNAPSHOT.jar"]
